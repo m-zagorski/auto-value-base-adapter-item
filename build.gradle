@@ -2,7 +2,11 @@
 
 buildscript {
     repositories {
+        maven { url 'https://maven-central.storage.googleapis.com' }
+        mavenCentral()
         jcenter()
+        maven { url 'https://commondatastorage.googleapis.com/maven-repository/' }
+        maven { url  "http://dl.bintray.com/mateusz/maven" }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.2.1'
