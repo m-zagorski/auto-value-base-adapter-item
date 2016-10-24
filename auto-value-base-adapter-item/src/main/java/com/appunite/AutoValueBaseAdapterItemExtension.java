@@ -87,8 +87,7 @@ public class AutoValueBaseAdapterItemExtension extends AutoValueExtension {
 
         final TypeMirror detectable = context.processingEnvironment().getElementUtils()
                 .getTypeElement("com.appunite.rx.android.adapter.BaseAdapterItem").asType();
-        return TypeSimplifier.isClassOfType(context.processingEnvironment().getTypeUtils(), detectable,
-                autoValueClass);
+        return detectable != null && context.processingEnvironment().getTypeUtils().isAssignable(autoValueClass, detectable);
     }
 
     @Override
