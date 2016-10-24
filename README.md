@@ -50,6 +50,7 @@ return var1 instanceof IdItem
 ```
 
 also `adapterId` will return `id().hashCode()`
+
 If by any reason you would like to have different `adapterId` you can just override
 this method in your class.
 
@@ -57,6 +58,16 @@ this method in your class.
 
 This extension also supports `BaseAnimatedAdapterItem` but since it is not yet
 released in rx-java-extensions details will be provided later.
+
+## Sample
+Sample just includes one model class which you can launch using `gradle` from command line
+as there is an issue with android studio and the plugin.
+
+```groovy
+./gradlew build -x lint
+``` 
+
+Will generate `AutoValue_BaseItem`
 
 ## Download 
 
