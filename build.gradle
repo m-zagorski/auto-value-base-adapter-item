@@ -2,10 +2,8 @@
 
 buildscript {
     repositories {
-        maven { url 'https://maven-central.storage.googleapis.com' }
         mavenCentral()
         jcenter()
-        maven { url 'https://commondatastorage.googleapis.com/maven-repository/' }
         maven { url  "http://dl.bintray.com/mateusz/maven" }
     }
     dependencies {
@@ -21,6 +19,7 @@ buildscript {
 allprojects {
     repositories {
         maven { url "https://jitpack.io" }
+        maven { url  "http://dl.bintray.com/mateusz/maven" }
         jcenter()
     }
 }
