@@ -1,1 +1,1 @@
-include ':app', ':auto-value-base-adapter-item'
+include ':app', ':auto-value-base-adapter-item', ':auto-value-base-adapter-item-ext'

@@ -74,7 +74,8 @@ Will generate `AutoValue_BaseItem`
 Add as a Gradle dependency
 
 ```groovy
-compile 'com.appunite:auto-value-base-adapter-item:0.0.1'
+compile 'com.appunite:auto-value-base-adapter-item-ext:0.0.1'
+apt 'com.appunite:auto-value-base-adapter-item:0.0.2'
 ```
 
 You also need maven repo
@@ -82,6 +83,10 @@ You also need maven repo
 ```groovy
 maven { url  "http://dl.bintray.com/mateusz/maven" }
 ```
+
+Apt plugins:
+For android projects - [AndroidApt](https://bitbucket.org/hvisser/android-apt)
+For java projects - [JavaApt](https://github.com/tbroyer/gradle-apt-plugin)
 
 # License
 
