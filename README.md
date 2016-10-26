@@ -74,7 +74,7 @@ Will generate `AutoValue_BaseItem`
 Add as a Gradle dependency
 
 ```groovy
-compile 'com.appunite:auto-value-base-adapter-item-ext:0.0.1'
+compile 'com.appunite:auto-value-base-adapter-item-ext:0.0.2'
 apt 'com.appunite:auto-value-base-adapter-item:0.0.2'
 ```
 
