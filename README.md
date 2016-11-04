@@ -2,7 +2,7 @@ AutoValue: BaseAdapterItem Extension
 ========
 
 An extension for Google's [AutoValue](https://github.com/google/auto) that supports BaseAdapterItem
-interface from [RxJavaExtensions](https://github.com/jacek-marchwicki/rx-java-extensions)
+interface from [RecyclerView-Changes-Detector](https://github.com/jacek-marchwicki/recyclerview-changes-detector)
 
 To make the best out of `BaseAdapterItem` you have to implement `equals` `hashCode` and
 additionally `same` `matches` and `adapterId` coming from the interface itself.
@@ -74,8 +74,8 @@ Will generate `AutoValue_BaseItem`
 Add as a Gradle dependency
 
 ```groovy
-compile 'com.appunite:auto-value-base-adapter-item-ext:0.0.2'
-apt 'com.appunite:auto-value-base-adapter-item:0.0.2'
+compile 'com.appunite:auto-value-base-adapter-item-ext:0.0.3'
+apt 'com.appunite:auto-value-base-adapter-item:0.0.3'
 ```
 
 You also need maven repo

@@ -86,7 +86,7 @@ public class AutoValueBaseAdapterItemExtension extends AutoValueExtension {
         }
 
         final TypeMirror detectable = context.processingEnvironment().getElementUtils()
-                .getTypeElement("com.appunite.rx.android.adapter.BaseAdapterItem").asType();
+                .getTypeElement("com.jacekmarchwicki.universaladapter.BaseAdapterItem").asType();
         return detectable != null && context.processingEnvironment().getTypeUtils().isAssignable(autoValueClass, detectable);
     }
 
@@ -96,14 +96,8 @@ public class AutoValueBaseAdapterItemExtension extends AutoValueExtension {
         for (ExecutableElement element : context.abstractMethods()) {
             switch (element.getSimpleName().toString()) {
                 case "matches":
-                    methods.add(element);
-                    break;
                 case "same":
-                    methods.add(element);
-                    break;
                 case "adapterId":
-                    methods.add(element);
-                    break;
                 case "changePayload":
                     methods.add(element);
                     break;
@@ -243,7 +237,7 @@ public class AutoValueBaseAdapterItemExtension extends AutoValueExtension {
 
         for (Property property : properties) {
             if (property.annotations.contains("AdapterId")) {
-                block.add(" && $T.equal($N(), (($T) $N).$N())", ClassName.get("com.appunite.rx.internal", "Objects"), property.methodName, type, var1, property.methodName);
+                block.add(" && $N().equals((($T) $N).$N())", property.methodName, type, var1, property.methodName);
             }
         }
 
@@ -284,7 +278,7 @@ public class AutoValueBaseAdapterItemExtension extends AutoValueExtension {
 
     private static ExecutableElement findMatches(Context context) {
         final ProcessingEnvironment env = context.processingEnvironment();
-        final TypeMirror baseAdapterItem = env.getElementUtils().getTypeElement("com.appunite.rx.android.adapter.BaseAdapterItem").asType();
+        final TypeMirror baseAdapterItem = env.getElementUtils().getTypeElement("com.jacekmarchwicki.universaladapter.BaseAdapterItem").asType();
         for (ExecutableElement element : MoreElements.getLocalAndInheritedMethods(context.autoValueClass(), env.getElementUtils())) {
             if (element.getSimpleName().contentEquals("matches")
                     && MoreTypes.isTypeOf(boolean.class, element.getReturnType())
@@ -301,7 +295,7 @@ public class AutoValueBaseAdapterItemExtension extends AutoValueExtension {
 
     private static ExecutableElement findSame(Context context) {
         final ProcessingEnvironment env = context.processingEnvironment();
-        final TypeMirror baseAdapterItem = env.getElementUtils().getTypeElement("com.appunite.rx.android.adapter.BaseAdapterItem").asType();
+        final TypeMirror baseAdapterItem = env.getElementUtils().getTypeElement("com.jacekmarchwicki.universaladapter.BaseAdapterItem").asType();
         for (ExecutableElement element : MoreElements.getLocalAndInheritedMethods(context.autoValueClass(), env.getElementUtils())) {
             if (element.getSimpleName().contentEquals("same")
                     && MoreTypes.isTypeOf(boolean.class, element.getReturnType())
@@ -319,7 +313,7 @@ public class AutoValueBaseAdapterItemExtension extends AutoValueExtension {
 
     private ParameterSpec baseAdapterItemSpec() {
         return ParameterSpec
-                .builder(ClassName.get("com.appunite.rx.android.adapter", "BaseAdapterItem"), "var1")
+                .builder(ClassName.get("com.jacekmarchwicki.universaladapter", "BaseAdapterItem"), "var1")
                 .build();
     }
 }

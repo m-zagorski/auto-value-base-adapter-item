@@ -2,8 +2,8 @@ package com.appunite.auto_value_bai;
 
 
 import com.appunite.AdapterId;
-import com.appunite.rx.android.adapter.BaseAdapterItem;
 import com.google.auto.value.AutoValue;
+import com.jacekmarchwicki.universaladapter.BaseAdapterItem;
 
 import javax.annotation.Nonnull;
 
