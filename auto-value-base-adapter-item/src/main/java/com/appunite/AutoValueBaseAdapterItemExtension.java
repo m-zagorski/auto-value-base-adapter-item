@@ -32,8 +32,6 @@ import javax.lang.model.element.VariableElement;
 import javax.lang.model.type.TypeMirror;
 import javax.tools.Diagnostic;
 
-import static javax.lang.model.element.Modifier.FINAL;
-
 @AutoService(AutoValueExtension.class)
 public class AutoValueBaseAdapterItemExtension extends AutoValueExtension {
 
@@ -115,7 +113,6 @@ public class AutoValueBaseAdapterItemExtension extends AutoValueExtension {
         final TypeName type = ClassName.get(context.packageName(), className);
 
         TypeSpec.Builder subclass = TypeSpec.classBuilder(className)
-                .addModifiers(FINAL)
                 .addMethod(generateConstructor(properties))
                 .addMethod(generateMatches(properties, type))
                 .addMethod(generateSame());
