@@ -3,6 +3,7 @@ package com.appunite.auto_value_bai;
 
 import com.appunite.AdapterId;
 import com.google.auto.value.AutoValue;
+import com.google.auto.value.extension.memoized.Memoized;
 import com.jacekmarchwicki.universaladapter.BaseAdapterItem;
 
 import javax.annotation.Nonnull;
@@ -21,5 +22,10 @@ public abstract class BaseItem implements BaseAdapterItem {
     @Nonnull
     public static BaseItem create(String id, int count, String field) {
         return new AutoValue_BaseItem(id, count, field);
+    }
+
+    @Memoized
+    public int count2() {
+        return count() + 1;
     }
 }
